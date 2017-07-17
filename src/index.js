@@ -1,15 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+'use strict'
 
-import App from './components/app';
-import reducers from './reducers';
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+import SearchBar from './components/searchBar'
+
+const API_KEY = 'AIzaSyDDQWFHDLymmL0ISeCWkgpsrLsEzU7mYfM'
+
+// App = functional component (stateless)
+const App = () => {
+  return (
+    <div>
+      <SearchBar />
+    </div>
+  )
+}
 
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-    <App />
-  </Provider>
-  , document.querySelector('.container'));
+  <App />,
+  document.querySelector('.container')
+)
